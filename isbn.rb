@@ -3,12 +3,14 @@ def check_isbn(isbn)
 
 		if arr.size == 10
 			if valid_char(arr) == true
-				doo_it = mathpart(arr)
-				if doo_it == arr[-1]
-					true
-				else
-					false
-				end		
+					 glosubrepl(arr)
+
+						doo_it = mathpart(arr)
+						if doo_it == arr[-1]
+							true
+						else
+							false
+						end		
 			else
 				false
 			end			
@@ -58,8 +60,11 @@ def mathpart(arr)
 	totes = holder.sum
 	p "#{totes}heeerreeess totess!!!!!"
 	chektotes = totes%11
-	p "#{arr[9].class} wheee!!!@@@!!!hereitis!! "
-	p "#{chektotes.class} wheee!!!@@@!!!hereitis!! "
+	p "#{arr[9]} wheee!!!@@@!!!hereitis!! "
+		if arr[9] == "x" 
+			 arr[9] = "10"
+		end	 
+	 	p "#{chektotes} wheee!!!@@@!!!hereitis!! "
 		 arr[9] == chektotes.to_s
 			
 end	

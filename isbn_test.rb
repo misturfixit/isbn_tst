@@ -44,6 +44,12 @@ class Testnum < Minitest::Test
 		assert_equal(false,mathpart(["0","4","7","1","3","5","8","6","9","7"]))
 	end	
 	#______________________________________________#
+	def test_math_inval_isbn_w_x
+		assert_equal(true,mathpart(["8","7","7","1","9","5","8","6","9","x"]))
+	end	
+	
+
+
 
 	# def test_validity_fail
 	# 	assert_equal(false,check_isbn("1-234-56789-x"))		
