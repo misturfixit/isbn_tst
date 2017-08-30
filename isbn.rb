@@ -1,5 +1,4 @@
 def check_isbn(isbn)
-	isbn.gsub!(/[^0-9A-Za-z]/, "")
 	arr = isbn.split(//)
 
 		if arr.size == 10
@@ -19,17 +18,31 @@ def check_isbn(isbn)
 		end
 end	 	 
 #---_____________---_____________---_____________---#
+def glosub(string_isbn)
+	updtstr	= string_isbn.gsub!(/[- " "]/, "")
+end
+#---_____________---_____________---_____________---#
+def glosubrepl(string_isbn)
+p	"#{string_isbn} wheres my numberrr!!!!!!!!!!!!"
+	replstring	= string_isbn.gsub!(/[^x0-9]/, "")
+p	"#{string_isbn} Heres my numberrr!!!!!!!!!!!!!!"
+string_isbn
+end	
+#---_____________---_____________---_____________---#
+
+
 def check_key(arr)
 	keys = ["1","2","3","4","5","6","7","8","9","x"]
 		keys.each do |x|
-			arr.delete(x)	
+			arr.delete()	
 		end		
  	  if arr == []	
 	 		1
   	else		
 			2
 	  end		
-	#p "#{arr} arrr is herre!!!!ARRRR" 
+	p "#{arr} arrr is herre!!!!ARRRR" 
+	arr
 end
 #---_____________---_____________---_____________---#
 def mathpart(arr)
