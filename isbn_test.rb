@@ -19,7 +19,7 @@ class Testnum < Minitest::Test
 	def test_illegal_char
 		assert_equal("877195GILL869x", glosub("877195G IL--L869x"))
 	end	
-	#______________________________________________#  ill,char.
+	#______________________________________________#  ill. char.
 	def test_wth_hyphspace
 		assert_equal("877195869x", glosub("8-77  1-95-869-x"))
 	end	
@@ -27,29 +27,29 @@ class Testnum < Minitest::Test
 	def test_more_illegals
 		assert_equal("877195869x", glosubrepl("877durp19-586 9x"))
 	end	
-	#______________________________________________#  
-	def test_digtnlettr_match
-		assert_equal(1, check_key(["8","7","7","1","-","-","9","a"," ","b","c","5","8","6","9","x"]))
+	#______________________________________________#  more ill. char. 
+	def test_v_char
+		assert_equal(false, valid_char(["8","7","7","1","9","b","c","5","8","6","9","x"]))
 	end
-	#______________________________________________#  with x
-	# def test_letter_wheritshuddnbe
-	# 	assert_equal(false,check_isbn("123-4-5b789-x"))
-	# end
-	# #______________________________________________#  letter inline
-	# def test_wth_x___
-	# 	assert_equal(false,check_isbn("123-4-56789-x"))
-	# end		
-	# #______________________________________________#	
-	# def test_wth_letternot_x
-	# 	assert_equal(false,check_isbn("123-4-56789-q"))
-	# end	
-	# #______________________________________________#
+	#______________________________________________#  w
+	def test_v_char0
+		assert_equal(true, valid_char(["8","7","7","1","9","5","8","6","9","x"]))
+	end
+	#______________________________________________#
+	def test_mathof_val_isbn
+		assert_equal(true, mathpart(["0","4","7","1","9","5","8","6","9","7"]))
+	end		
+  #______________________________________________#	
+	def test_math_inval_isbn
+		assert_equal(false,mathpart(["0","4","7","1","3","5","8","6","9","7"]))
+	end	
+	#______________________________________________#
+
 	# def test_validity_fail
 	# 	assert_equal(false,check_isbn("1-234-56789-x"))		
 	# end
 	#______________________________________________#
 	
-	#______________________________________________#
 	#______________________________________________#
 	#______________________________________________#
 end
