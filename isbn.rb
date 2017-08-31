@@ -1,22 +1,27 @@
 def check_isbn(isbn)
 	stripped = glosub(isbn)
+	
+p "#{stripped} sTrIpPed...!!IS this it????"
 		if stripped.length == 10
 			arr = stripped.split(//) 
-#p "#{arr} is this it????"
 				 if valid_char(arr) == true
 				 	 doo_it = mathpart(arr)
 				 else
 				 	false
 				 end			
 		elsif stripped.size == 13
+				flurpbertyflap
 			else		
 				false
 		end
 end	 	 
 #---_____________---_____________---_____________---#
   def glosub(string_isbn)
- 	updtstr	= string_isbn.gsub!(/[- " "]/, "")
+ 	#p "#{string_isbn} whhhhhaass this it????"
+ 	updtstr	= string_isbn.gsub(/[- " "]/, "")
+  #p "#{updtstr} whhhhhis this it????"
   end
+
 #---_____________---_____________---_____________---#
 def glosubrepl(string_isbn)
 #p	"#{string_isbn} wheres my numberrr!!!!!!!!!!!!"
@@ -30,7 +35,7 @@ def valid_char(arr)
 	tst_arr = arr#.split(//)
 	invalid_arr = []
 	keys = ["0","1","2","3","4","5","6","7","8","9","x"]
-	p "#{arr} arrr is herre!!!!ARRRR" 
+#p "#{arr} arrr is herre!!!!ARRRR" 
 		# keys.each do |x|
 		 	tst_arr.each do |i|
 				if keys.include?(i)
@@ -41,35 +46,34 @@ def valid_char(arr)
 		 		end	
 		 	end
 		# end	
-
- 	  p "#{invalid_arr} INVALID___arrr is herre!!!!yyyyARRRRgggg"
- 	  if invalid_arr == []
+#p "#{invalid_arr} INVALID___arrr is herre!!!!yyyyARRRRgggg"
+	  if invalid_arr == []
 	 		true
   	else		
 			false
 	  end		
-	  # "#{arr} vereissa my ARRAYYYY???!?!?!?"
+#p "#{arr} vereissa my ARRAYYYY???!?!?!?"
 end
 #---_____________---_____________---_____________---#
 def mathpart(arr)
-		p	"#{arr}herre da arrr"
+p	"#{arr}herre da arrr"
 	cownter = 1
 	holder = []
 		9.times do
-		p	"#{arr[cownter-1]}heree isss the arr pos"
+		#p	"#{arr[cownter-1]}heree isss the arr pos"
 			multp = arr[cownter-1].to_i * cownter
 			holder << multp
 		cownter += 1
 		end
 
 	totes = holder.sum
-	p "#{totes}heeerreeess totess!!!!!"
+p "#{totes}heeerreeess totess!!!!!"
 	chektotes = totes%11
-	p "#{arr[9]} wheee!!!@@@!!!hereitis!! "
+p "#{arr[9]} wheeeeeeeee!!!@@@!!!hereitis!! "
 		if arr[9] == "x" 
 			 arr[9] = "10"
 		end	 
-	 	p "#{chektotes} whoooooo!!!@@@!!!hereitis!! "
+p "#{chektotes} whoooooo!!!@@@!!!hereitis!! "
 		 arr[9] == chektotes.to_s
 end	
 
