@@ -47,10 +47,10 @@ class Testnum < Minitest::Test
 	# def test_math_inval_isbn_w_x
 	# 	assert_equal(true,mathpart(["8","7","7","1","9","5","8","6","9","x"]))
 	# end	
-	#______________________________________________#
-  def test_full_func
-	 	assert_equal(true,check_isbn("0471958697"))
-	end
+	 #______________________________________________#
+   def test_full_func
+	  	assert_equal(true,check_isbn("0471958697"))
+	 end
 
 
 
