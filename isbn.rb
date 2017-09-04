@@ -3,19 +3,20 @@ def check_isbn(isbn)
 	
 p "#{stripped} sTrIpPed...!!IS this it????"
 		if stripped.length == 10
-			arr = stripped.split(//) 
+			arr = stripped#.split(//) 
 				 if valid_char(arr) == true
 				 	 doo_it = mathpart(arr)
 				 else
 				 	false
 				 end			
-		elsif stripped.size == 13
-			arr = stripped.split(//)
+		elsif stripped.length == 13
+			arr = stripped#.split(//)
 				if valid_13(arr) == true
-					#gitt_er = mathing(arr)
+					do_eet = mathing(arr)
 				else		
 				false
 				end	
+#p "#{gitt_er}.$%.%$%.$.$%$"		
 		end
 end	 	 
 #---_____________---_____________---_____________---#
@@ -35,7 +36,7 @@ string_isbn
 end	
 #---_____________---_____________---_____________---#
 def valid_char(arr)
-	tst_arr = arr#.split(//)
+	tst_arr = arr.split(//)
 	invalid_arr = []
 	keys = ["0","1","2","3","4","5","6","7","8","9","x"]
 #p "#{arr} arrr is herre!!!!ARRRR" 
@@ -119,7 +120,7 @@ p "#{holder} whatsss innn herrree"
 	this = totes % 10
 	that = 10 - this
 	chektotes = that % 10
-p "#{chektotes} here is the TOTASLL"
+#p "#{chektotes} here is the TOTASLL"
 	chektotes.to_s
 end
 
