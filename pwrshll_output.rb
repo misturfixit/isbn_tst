@@ -19,3 +19,6 @@ Finished in 0.012813s, 156.0901 runs/s, 78.0450 assertions/s.
 "[]herre da arrr"
 
 
+Finished in 0.076124s, 183.9106 runs/s, 170.7741 assertions/s.
+
+14 runs, 13 assertions, 0 failures, 0 errors, 0 skips

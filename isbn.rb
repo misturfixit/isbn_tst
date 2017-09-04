@@ -10,9 +10,12 @@ p "#{stripped} sTrIpPed...!!IS this it????"
 				 	false
 				 end			
 		elsif stripped.size == 13
-				flurpbertyflap
-			else		
+			arr = stripped.split(//)
+				if valid_13(arr) == true
+					#gitt_er = mathing(arr)
+				else		
 				false
+				end	
 		end
 end	 	 
 #---_____________---_____________---_____________---#
@@ -55,6 +58,27 @@ def valid_char(arr)
 #p "#{arr} vereissa my ARRAYYYY???!?!?!?"
 end
 #---_____________---_____________---_____________---#
+def valid_13(arr)
+	tst_arr = arr.split(//)
+	inv_arr = []
+	keyz = ["0","1","2","3","4","5","6","7","8","9"]
+p "#{arr} 13arr@@@ is @@@herre@@@!!!!ARgg"		
+		tst_arr.each do |i|
+			if keyz.include?(i)
+
+			else 
+				inv_arr << i
+			end
+		end
+p "#{inv_arr} INV*&*&___arrr is herre!!SNARFFF!!"		
+	if inv_arr == []
+		true
+	else
+		false
+	end
+#p "#{arr} Wheers MMmy ARRAYYYY???!?!?!?$$$$$$$"	
+end				
+#---_____________---_____________---_____________---#
 def mathpart(arr)
 p	"#{arr}herre da arrr"
 	cownter = 1
@@ -65,15 +89,39 @@ p	"#{arr}herre da arrr"
 			holder << multp
 		cownter += 1
 		end
-
 	totes = holder.sum
-p "#{totes}heeerreeess totess!!!!!"
+#p "#{totes}heeerreeess totess!!!!!"
 	chektotes = totes%11
-p "#{arr[9]} wheeeeeeeee!!!@@@!!!hereitis!! "
+#p "#{arr[9]} wheeeeeeeee!!!@@@!!!hereitis!! "
 		if arr[9] == "x" 
 			 arr[9] = "10"
 		end	 
-p "#{chektotes} whoooooo!!!@@@!!!hereitis!! "
+#p "#{chektotes} whoooooo!!!@@@!!!hereitis!! "
 		 arr[9] == chektotes.to_s
 end	
+#---_____________---_____________---_____________---#
+#---_____________---_____________---_____________---#
+def mathing(arr)
+	cownter = 1
+	holder = []
+		12.times do
+			if cownter%2 == 0
+				multp = arr[cownter-1].to_i * 3
+				holder << multp
+			else 
+				multp = arr[cownter-1].to_i * 1
+				holder << multp
+			end
+			cownter += 1		
+		end	
+p "#{holder} whatsss innn herrree"		
+	totes = holder.sum	
+	this = totes % 10
+	that = 10 - this
+	chektotes = that % 10
+p "#{chektotes} here is the TOTASLL"
+	chektotes.to_s
+end
+
+#---_____________---_____________---_____________---#
 
