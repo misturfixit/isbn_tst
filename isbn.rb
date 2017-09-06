@@ -5,7 +5,7 @@ p "#{stripped} sTrIpPed...!!IS this it????"
 		if stripped.length == 10
 			arr = stripped#.split(//) 
 				 if valid_char(arr) == true
-				 	 doo_it = mathpart(arr)
+				 	doo_it = mathpart(arr.split(//))
 				 else
 				 	false
 				 end			
@@ -38,7 +38,7 @@ end
 def valid_char(arr)
 	tst_arr = arr.split(//)
 	invalid_arr = []
-	keys = ["0","1","2","3","4","5","6","7","8","9","x"]
+	keys = ["0","1","2","3","4","5","6","7","8","9","x","X"]
 #p "#{arr} arrr is herre!!!!ARRRR" 
 		# keys.each do |x|
 		 	tst_arr.each do |i|
@@ -81,7 +81,12 @@ p "#{inv_arr} INV*&*&___arrr is herre!!SNARFFF!!"
 end				
 #---_____________---_____________---_____________---#
 def mathpart(arr)
-p	"#{arr}herre da arrr"
+#p	"#{arr.class}herre da arrr"
+	last = arr.slice!(-1)
+		if arr.include?("x") || arr.include?("X")
+			false
+		else
+		arr << last
 	cownter = 1
 	holder = []
 		9.times do
@@ -93,35 +98,41 @@ p	"#{arr}herre da arrr"
 	totes = holder.sum
 #p "#{totes}heeerreeess totess!!!!!"
 	chektotes = totes%11
-#p "#{arr[9]} wheeeeeeeee!!!@@@!!!hereitis!! "
-		if arr[9] == "x" 
+		if arr[9] == "x"
 			 arr[9] = "10"
+		elsif arr[9] =="X"
+				arr[9] = "10"
 		end	 
 #p "#{chektotes} whoooooo!!!@@@!!!hereitis!! "
+p "#{arr[9]} wheeeeeeeee!!!@@@!!!hereitis!! "
 		 arr[9] == chektotes.to_s
+		end
 end	
 #---_____________---_____________---_____________---#
 #---_____________---_____________---_____________---#
-def mathing(arr)
+def mathing(string)
 	cownter = 1
+	#arr.split(//)
 	holder = []
 		12.times do
 			if cownter%2 == 0
-				multp = arr[cownter-1].to_i * 3
+				multp = string[cownter-1].to_i * 3
 				holder << multp
 			else 
-				multp = arr[cownter-1].to_i * 1
+				multp = string[cownter-1].to_i * 1
 				holder << multp
 			end
 			cownter += 1		
 		end	
-p "#{holder} whatsss innn herrree"		
+#p "#{arr.class} whatsss innn herrree"		
 	totes = holder.sum	
 	this = totes % 10
 	that = 10 - this
 	chektotes = that % 10
-#p "#{chektotes} here is the TOTASLL"
-	chektotes.to_s
+p "#{chektotes} here is the TOTASLL"
+
+#arr.class
+	string[12] == chektotes.to_s
 end
 
 #---_____________---_____________---_____________---#
