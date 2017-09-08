@@ -1,0 +1,12 @@
+before val
+
+<div id="list">
+	<form method="post" action="csvrun">
+		<%csv_arys.each do |row|%>
+			<%=row[1]%><br>
+
+		<input type="hidden" name="isbn_arr[]" value="<%=row[1]%>">
+		<%end%>	
+		<input type="submit" value="gittit">
+	</form>	
+</div>
