@@ -13,7 +13,7 @@ post '/csv' do
 end	
 #*****^^^^^*****^^^^^*****^^^^^*****^^^^^*****#
 get '/csv_ret' do
-	csv_arrs = CSV.read("isbn.csv")
+	csv_arrs = CSV.read("isbnum.csv")
 	erb :csv_ret, locals:{csv_arrs:csv_arrs}
 end	
 #*****^^^^^*****^^^^^*****^^^^^*****^^^^^*****#

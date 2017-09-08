@@ -1,11 +1,11 @@
-before val
+before validating
 
 <div id="list">
 	<form method="post" action="csvrun">
-		<%csv_arys.each do |row|%>
+		<%csv_arrs.each do |row|%>
 			<%=row[1]%><br>
 
-		<input type="hidden" name="isbn_arr[]" value="<%=row[1]%>">
+		<input type="hidden" name="is_arr[]" value="<%=row[1]%>">
 		<%end%>	
 		<input type="submit" value="gittit">
 	</form>	
