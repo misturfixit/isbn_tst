@@ -17,6 +17,21 @@ get '/csv_ret' do
 	erb :csv_ret, locals:{csv_arrs:csv_arrs}
 end	
 #*****^^^^^*****^^^^^*****^^^^^*****^^^^^*****#
+post '/csvrun' do
+	session[:is_arr] = params[:is_arr]
+	is_arr = params[:is_arr]
+	val_arr =[]
+		is_arr.each do |x|
+			val_arr << check_isbn(x)
+		end
+	session[:val_arr] = val_arr
+	redirect '/validate'		
+end	
+#*****^^^^^*****^^^^^*****^^^^^*****^^^^^*****#
+get '/validate' do
+	erb :validate, locals:{is_arr:session[:is_arr],val_arr:session[:val_arr]}
+end	
+#*****^^^^^*****^^^^^*****^^^^^*****^^^^^*****#
 post '/nums' do
 	isbn = params[:isbn]
 	redirect '/results?isbn='+isbn
