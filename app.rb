@@ -1,6 +1,8 @@
 require "sinatra"
-require_relative "isbn.rb"
 require "csv"
+#require "aws-sdk"
+require_relative "isbn.rb"
+require_relative "sender.rb"
 enable "sessions"
 #+++++++=======+++++++=======+++++++#
 #*****^^^^^*****^^^^^*****^^^^^*****^^^^^*****#
@@ -26,6 +28,7 @@ post '/csvrun' do
 		end
 	session[:val_arr] = val_arr
 	redirect '/validate'		
+	send_to_bukkit(val_arr)
 end	
 #*****^^^^^*****^^^^^*****^^^^^*****^^^^^*****#
 get '/validate' do

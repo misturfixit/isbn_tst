@@ -15,7 +15,6 @@ def check_isbn(isbn)
 				else		
 				false
 				end	
-#p "#{gitt_er}.$%.%$%.$.$%$"		
 		end
 end	 	 
 #---_____________---_____________---_____________---#
@@ -26,9 +25,7 @@ end
 
 #---_____________---_____________---_____________---#
 def glosubrepl(string_isbn)
-#p	"#{string_isbn} wheres my numberrr!!!!!!!!!!!!"
 	restring	= string_isbn.gsub!(/[^x0-9]/, "")
-#p	"#{string_isbn} Heres my numberrr!!!!!!!!!!!!!!"
 string_isbn
 # restring
 end	
