@@ -1,7 +1,6 @@
 def check_isbn(isbn)
 	stripped = glosub(isbn)
 	
-p "#{stripped} sTrIpPed...!!IS this it????"
 		if stripped.length == 10
 			arr = stripped#.split(//) 
 				 if valid_char(arr) == true
@@ -21,7 +20,6 @@ p "#{stripped} sTrIpPed...!!IS this it????"
 end	 	 
 #---_____________---_____________---_____________---#
   def glosub(string_isbn)
- 	#p "#{string_isbn} whhhhhaass this it????"
  	updtstr	= string_isbn.gsub(/[- " "]/, "")
   #p "#{updtstr} whhhhhis this it????"
   end
@@ -39,31 +37,25 @@ def valid_char(arr)
 	tst_arr = arr.split(//)
 	invalid_arr = []
 	keys = ["0","1","2","3","4","5","6","7","8","9","x","X"]
-#p "#{arr} arrr is herre!!!!ARRRR" 
-		# keys.each do |x|
 		 	tst_arr.each do |i|
 				if keys.include?(i)
 
 				else
-		# 		if i != x
 		 			invalid_arr << i
 		 		end	
 		 	end
-		# end	
-#p "#{invalid_arr} INVALID___arrr is herre!!!!yyyyARRRRgggg"
 	  if invalid_arr == []
 	 		true
   	else		
 			false
 	  end		
-#p "#{arr} vereissa my ARRAYYYY???!?!?!?"
 end
 #---_____________---_____________---_____________---#
 def valid_13(arr)
 	tst_arr = arr.split(//)
 	inv_arr = []
 	keyz = ["0","1","2","3","4","5","6","7","8","9"]
-p "#{arr} 13arr@@@ is @@@herre@@@!!!!ARgg"		
+#p "#{arr} 13arr@@@ is @@@herre@@@!!!!ARgg"		
 		tst_arr.each do |i|
 			if keyz.include?(i)
 
@@ -71,17 +63,15 @@ p "#{arr} 13arr@@@ is @@@herre@@@!!!!ARgg"
 				inv_arr << i
 			end
 		end
-p "#{inv_arr} INV*&*&___arrr is herre!!SNARFFF!!"		
+#p "#{inv_arr} INV*&*&___arrr is herre!!SNARFFF!!"		
 	if inv_arr == []
 		true
 	else
 		false
 	end
-#p "#{arr} Wheers MMmy ARRAYYYY???!?!?!?$$$$$$$"	
 end				
 #---_____________---_____________---_____________---#
 def mathpart(arr)
-#p	"#{arr.class}herre da arrr"
 	last = arr.slice!(-1)
 		if arr.include?("x") || arr.include?("X")
 			false
@@ -90,21 +80,17 @@ def mathpart(arr)
 	cownter = 1
 	holder = []
 		9.times do
-		#p	"#{arr[cownter-1]}heree isss the arr pos"
 			multp = arr[cownter-1].to_i * cownter
 			holder << multp
 		cownter += 1
 		end
 	totes = holder.sum
-#p "#{totes}heeerreeess totess!!!!!"
 	chektotes = totes%11
 		if arr[9] == "x"
 			 arr[9] = "10"
 		elsif arr[9] =="X"
 				arr[9] = "10"
 		end	 
-#p "#{chektotes} whoooooo!!!@@@!!!hereitis!! "
-p "#{arr[9]} wheeeeeeeee!!!@@@!!!hereitis!! "
 		 arr[9] == chektotes.to_s
 		end
 end	
@@ -129,7 +115,6 @@ def mathing(string)
 	this = totes % 10
 	that = 10 - this
 	chektotes = that % 10
-p "#{chektotes} here is the TOTASLL"
 
 #arr.class
 	string[12] == chektotes.to_s
