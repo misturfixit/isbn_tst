@@ -28,7 +28,7 @@ post '/csvrun' do
 		end
 	session[:val_arr] = val_arr
 	redirect '/validate'		
-	send_to_bukkit(val_arr)
+	#send_to_bukkit(val_arr) ha
 end	
 #*****^^^^^*****^^^^^*****^^^^^*****^^^^^*****#
 get '/validate' do
