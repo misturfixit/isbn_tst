@@ -3,17 +3,17 @@ def check_isbn(isbn)
 	
 		if stripped.length == 10
 			arr = stripped#.split(//) 
-				 if valid_char(arr) == valid
+				 if valid_char(arr) == true
 				 	doo_it = mathpart(arr.split(//))
 				 else
-				 	invalid
+				 	false
 				 end			
 		elsif stripped.length == 13
 			arr = stripped#.split(//)
-				if valid_13(arr) == valid
+				if valid_13(arr) == true
 					do_eet = mathing(arr)
 				else		
-				invalid
+				false
 				end	
 		end
 end	 	 

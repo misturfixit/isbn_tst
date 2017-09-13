@@ -1,13 +1,16 @@
 require "sinatra"
+require 'aws-sdk'
 require "csv"
-#require "aws-sdk"
+require "aws-sdk"
 require_relative "isbn.rb"
 require_relative "sender.rb"
-enable "sessions"
+	load "./local_env.rb"
+	enable :sessions
 #+++++++=======+++++++=======+++++++#
 #*****^^^^^*****^^^^^*****^^^^^*****^^^^^*****#
 get '/' do
-	erb :input
+	numbr = get_dat()
+	erb :input, locals:{numbr:numbr}
 end
 #*****^^^^^*****^^^^^*****^^^^^*****^^^^^*****#
 post '/csv' do
