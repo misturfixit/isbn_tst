@@ -9,8 +9,8 @@ require_relative "sender.rb"
 #+++++++=======+++++++=======+++++++#
 #*****^^^^^*****^^^^^*****^^^^^*****^^^^^*****#
 get '/' do
-	numbr = get_dat()
-	erb :input, locals:{numbr:numbr}
+	session[:numbr] = get_dat()
+	erb :input, locals:{numbr:session[:numbr]}
 end
 #*****^^^^^*****^^^^^*****^^^^^*****^^^^^*****#
 post '/csv' do
@@ -31,7 +31,6 @@ post '/csvrun' do
 		end
 	session[:val_arr] = val_arr
 	redirect '/validate'		
-	#send_to_bukkit(val_arr) ha
 end	
 #*****^^^^^*****^^^^^*****^^^^^*****^^^^^*****#
 get '/validate' do
@@ -46,7 +45,15 @@ end
 get '/results' do
 	isbn = params[:isbn]
 	results = check_isbn(isbn)
-	erb :results, locals:{isbn:isbn,results:results}
+	erb :results, locals:{isbn:isbn,results:results,numbr:session[:numbr]}
 end	
+#*****^^^^^*****^^^^^*****^^^^^*****^^^^^*****#
+post '/finalpage' do
+	redirect '/final_page'
+end	
+#*****^^^^^*****^^^^^*****^^^^^*****^^^^^*****#
+get '/final_page' do
+	erb :lastpage
+end
 #*****^^^^^*****^^^^^*****^^^^^*****^^^^^*****#
 #*****^^^^^*****^^^^^*****^^^^^*****^^^^^*****#

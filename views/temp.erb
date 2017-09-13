@@ -1,0 +1,10 @@
+<form method="post" action="csv">
+			<%count = 1%>
+			<%CSV.open("results.csv", "wb") do |csv|%><br>
+			<%csv << ["item","isbn","Validate"]%>
+		  <%until count == is_arr.length%>
+				<%=count%>,<%=is_arr[count]%>,<%=val_arr[count]%><br>
+					<%=csv << [count,is_arr[count],val_arr[count]]%>
+				<%count+=1%>
+			<%end%>
+		</form>

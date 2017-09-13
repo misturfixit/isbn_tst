@@ -6,5 +6,26 @@
 	<body>
 		<%=isbn%>
 		<%=results%>
+
+		<%newnum = numbr.count%>
+		<%numbr << "#{newnum},#{isbn},#{results}"%>
+
+		<%CSV.open("results.csv", "w") do |csv|%>
+			<%numbr.each do |n|%>
+	  <%csv << [n]%>
+			<%end%>	
+		<%end%>
+	
+		<%Aws::S3::Client.new()%>
+		<%file = "results.csv"%>
+		<%bucket = "buckethed"%>
+		<%s3 = Aws::S3::Resource.new%>
+		<%obj = s3.bucket(bucket).object(file)%>
+			<%File.open(file, 'rb') do |file|%>
+		<%obj.put(body: file)%>
+		<%end%>	
 	</body>
+	<form method="post" action="finalpage">
+		<input type="submit" value="final">
+	</form>
 </html>

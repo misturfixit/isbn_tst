@@ -19,8 +19,8 @@ def get_dat()
 	s3 = Aws::S3::Client.new
 	mybuketfile = s3.get_object(bucket:"buckethed", key:"results.csv")
 	numbr = mybuketfile.body.read
+	numbr.gsub!(/[^0-9A-Za-z\n,]/, "")
 	splittr = numbr.split
-	splittr
-#p numbr
+splittr
 end	
 #get_dat
