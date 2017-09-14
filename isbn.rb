@@ -17,7 +17,7 @@ def check_isbn(isbn)
 				end	
 		end
 end	 	 
-#---_____________---_____________---_____________---#
+#---____using_gsub_________---___to_remove___dashsnspaces_______---_____________---#
   def glosub(string_isbn)
  	updtstr	= string_isbn.gsub(/[- " "]/, "")
   #p "#{updtstr} whhhhhis this it????"
@@ -107,7 +107,7 @@ def mathing(string)
 			end
 			cownter += 1		
 		end	
-#p "#{arr.class} whatsss innn herrree"		
+#p "#{arr.class} seee whatsss innn herrree"		
 	totes = holder.sum	
 	this = totes % 10
 	that = 10 - this
@@ -118,4 +118,3 @@ def mathing(string)
 end
 
 #---_____________---_____________---_____________---#
-
