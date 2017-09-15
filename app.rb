@@ -1,10 +1,10 @@
 require "sinatra"
 require 'aws-sdk'
 require "csv"
-require "aws-sdk"
 require_relative "isbn.rb"
 require_relative "sender.rb"
-	load "./local_env.rb"
+	load './local_env.rb' if File.exist?('./local_env.rb')
+
 	enable :sessions
 #+++++++=======+++++++=======+++++++#
 #*****^^^^^*****^^^^^*****^^^^^*****^^^^^*****#

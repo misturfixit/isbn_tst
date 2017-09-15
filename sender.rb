@@ -1,6 +1,3 @@
-require "csv"
-require "aws-sdk"
-	load "./local_env.rb"
 
 
 def send_to_bukkit()
